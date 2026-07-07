@@ -1,1 +1,342 @@
-/* Lesson-specific styles for pipeline. Prefix all classes to avoid collisions. */
+.pipe-intro,
+.pipe-tokenize,
+.pipe-numbers,
+.pipe-predict,
+.pipe-stream,
+.pipe-recap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.pipe-hero-emoji {
+  font-size: clamp(48px, 7vw, 86px);
+  line-height: 1;
+  filter: drop-shadow(0 8px 0 rgba(43, 51, 80, 0.08));
+  animation: pipe-bob 2.4s ease-in-out infinite;
+}
+
+.pipe-message-flow {
+  width: min(100%, 980px);
+  display: grid;
+  grid-template-columns: 1.2fr auto 1fr auto 1.2fr;
+  align-items: center;
+  gap: 14px;
+  margin: 8px 0 6px;
+}
+
+.pipe-bubble,
+.pipe-machine,
+.pipe-demo-card,
+.pipe-number-card,
+.pipe-sentence-panel,
+.pipe-candidates,
+.pipe-phone,
+.pipe-recap-card {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.pipe-bubble {
+  padding: 18px;
+  font-size: clamp(18px, 2vw, 26px);
+  font-weight: 800;
+  text-align: left;
+}
+
+.pipe-bubble-user {
+  border: 4px solid var(--eyes);
+}
+
+.pipe-bubble-bot {
+  border: 4px solid var(--hands);
+}
+
+.pipe-machine {
+  padding: 18px 16px;
+  border: 4px dashed var(--brain);
+  color: var(--ink);
+  font-weight: 900;
+  font-size: clamp(16px, 1.6vw, 20px);
+}
+
+.pipe-flow-arrow,
+.pipe-number-arrow {
+  color: var(--brand);
+  font-size: clamp(30px, 4vw, 52px);
+  font-weight: 900;
+}
+
+.pipe-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.pipe-demo-card {
+  width: min(100%, 920px);
+  padding: 24px;
+  border: 4px solid rgba(255, 122, 162, 0.28);
+}
+
+.pipe-sentence {
+  display: inline-block;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  border-radius: 16px;
+  background: #fff6e9;
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 900;
+}
+
+.pipe-token-lane,
+.pipe-stream-tokens {
+  min-height: 74px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pipe-token,
+.pipe-stream-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #f4ecff;
+  border: 3px solid var(--brain);
+  color: var(--ink);
+  font-size: clamp(17px, 1.6vw, 22px);
+  font-weight: 900;
+  opacity: 0.42;
+}
+
+.pipe-token-revealed {
+  opacity: 1;
+  animation: pipe-pop 0.36s ease both;
+}
+
+.pipe-number-grid {
+  width: min(100%, 980px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 8px 0;
+}
+
+.pipe-number-card {
+  padding: 22px;
+  border-top: 8px solid var(--loop);
+}
+
+.pipe-number-token {
+  opacity: 1;
+  background: #eaf8ff;
+  border-color: var(--eyes);
+}
+
+.pipe-vector {
+  margin: 10px auto;
+  padding: 14px;
+  border-radius: 14px;
+  background: #2b3350;
+  color: #fff;
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.pipe-hint,
+.pipe-small-note,
+.pipe-picked {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.pipe-predict-grid {
+  width: min(100%, 1040px);
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 20px;
+  align-items: stretch;
+}
+
+.pipe-sentence-panel,
+.pipe-candidates {
+  padding: 22px;
+  text-align: left;
+}
+
+.pipe-live-sentence {
+  min-height: 132px;
+  display: flex;
+  align-items: center;
+  padding: 18px;
+  margin: 12px 0;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fff6e9, #ffe9f1);
+  font-size: clamp(24px, 3vw, 42px);
+  font-weight: 900;
+  line-height: 1.22;
+}
+
+.pipe-candidate {
+  padding: 12px;
+  margin-top: 10px;
+  border: 3px solid #eee3d6;
+  border-radius: 16px;
+  background: #fffaf2;
+}
+
+.pipe-candidate-best {
+  border-color: var(--hands);
+  background: #effff7;
+}
+
+.pipe-candidate-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: clamp(16px, 1.5vw, 22px);
+}
+
+.pipe-candidate-token {
+  font-weight: 900;
+}
+
+.pipe-prob-track {
+  height: 16px;
+  margin-top: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #eadfce;
+}
+
+.pipe-prob-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--brand), var(--accent));
+  animation: pipe-grow 0.45s ease both;
+}
+
+.pipe-finished {
+  display: grid;
+  min-height: 180px;
+  place-items: center;
+  color: var(--hands);
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 900;
+}
+
+.pipe-phone {
+  width: min(100%, 760px);
+  padding: 18px;
+  border: 5px solid var(--ink);
+  text-align: left;
+}
+
+.pipe-phone-top {
+  display: inline-block;
+  padding: 8px 14px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: var(--eyes);
+  font-weight: 900;
+}
+
+.pipe-type-box {
+  min-height: 128px;
+  padding: 18px;
+  border-radius: 16px;
+  background: #f7fbff;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.pipe-cursor {
+  display: inline-block;
+  margin-top: 6px;
+  color: var(--brand);
+  font-size: 34px;
+  animation: pipe-blink 0.8s steps(1) infinite;
+}
+
+.pipe-stream-tokens {
+  width: min(100%, 900px);
+}
+
+.pipe-stream-chip {
+  opacity: 0.26;
+  background: #fff;
+  border-color: #e8ddce;
+}
+
+.pipe-stream-chip-lit {
+  opacity: 1;
+  border-color: var(--accent);
+  background: #fff7d8;
+  transform: translateY(-2px);
+}
+
+.pipe-recap-grid {
+  width: min(100%, 1040px);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin: 6px 0;
+}
+
+.pipe-recap-card {
+  padding: 18px 14px;
+  border-bottom: 7px solid var(--brand);
+}
+
+.pipe-recap-emoji {
+  font-size: clamp(34px, 4vw, 54px);
+}
+
+.pipe-recap-card p {
+  margin-bottom: 0;
+  font-size: clamp(15px, 1.3vw, 19px);
+}
+
+@keyframes pipe-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pipe-pop {
+  from { transform: translateY(8px) scale(0.9); }
+  to { transform: none; }
+}
+
+@keyframes pipe-grow {
+  from { width: 0; }
+}
+
+@keyframes pipe-blink {
+  50% { opacity: 0; }
+}
+
+@media (max-width: 900px) {
+  .pipe-message-flow,
+  .pipe-predict-grid,
+  .pipe-number-grid,
+  .pipe-recap-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pipe-flow-arrow {
+    transform: rotate(90deg);
+  }
+}
