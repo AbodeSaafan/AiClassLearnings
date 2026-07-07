@@ -1,0 +1,31 @@
+#stage {
+  position: absolute; inset: 0 0 88px 0; /* leave room for navbar */
+  display: flex; align-items: center; justify-content: center;
+  padding: 32px; text-align: center;
+  overflow-y: auto;
+}
+.scene {
+  width: 100%; max-width: 1100px;
+  animation: sceneIn .45s ease both;
+}
+@keyframes sceneIn {
+  from { opacity: 0; transform: translateY(18px) scale(.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+#navbar {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 88px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 28px; background: rgba(255, 255, 255, .6); backdrop-filter: blur(6px);
+}
+.nav-btn {
+  font-family: var(--font); font-weight: 800; font-size: 18px;
+  border: none; border-radius: 12px; padding: 12px 22px; cursor: pointer;
+  background: #fff; color: var(--ink); box-shadow: 0 4px 0 #e2dccf;
+}
+.nav-btn.primary { background: var(--brand); color: #fff; box-shadow: 0 4px 0 var(--brand-shadow); }
+.nav-btn:disabled { opacity: .4; cursor: not-allowed; box-shadow: none; }
+
+.progress { display: flex; gap: 10px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; background: #e7ddcd; transition: .2s; }
+.dot.active { background: var(--brand); transform: scale(1.25); }
