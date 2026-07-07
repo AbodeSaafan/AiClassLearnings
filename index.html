@@ -3,26 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Workflows vs. AI Agents</title>
+  <title>The AI Concepts Lab</title>
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/scenes.css" />
+  <link rel="stylesheet" href="css/home.css" />
   <link rel="stylesheet" href="css/factory.css" />
   <link rel="stylesheet" href="css/robot.css" />
+  <link rel="stylesheet" href="css/lessons/rag.css" />
+  <link rel="stylesheet" href="css/lessons/pipeline.css" />
+  <link rel="stylesheet" href="css/lessons/tokens.css" />
 </head>
 <body>
   <main id="stage" aria-live="polite"></main>
 
   <nav id="navbar">
-    <button id="btn-back" class="nav-btn" aria-label="Previous scene">&larr; Back</button>
+    <div class="nav-left">
+      <button id="btn-home" aria-label="Back to lessons">&#127968; Lessons</button>
+      <button id="btn-back" class="nav-btn" aria-label="Previous scene">&larr; Back</button>
+    </div>
     <div id="progress" class="progress"></div>
     <button id="btn-next" class="nav-btn primary" aria-label="Next scene">Next &rarr;</button>
   </nav>
 
+  <!-- Core -->
+  <script src="js/app.js"></script>
+  <!-- Shared helpers -->
   <script src="js/data.js"></script>
   <script src="js/robot.js"></script>
   <script src="js/workflow.js"></script>
   <script src="js/agentLoop.js"></script>
-  <script src="js/scenes.js"></script>
-  <script src="js/app.js"></script>
+  <!-- Lessons (each registers itself; array order = home order) -->
+  <script src="js/lessons/workflows-vs-agents.js"></script>
+  <script src="js/lessons/rag.js"></script>
+  <script src="js/lessons/pipeline.js"></script>
+  <script src="js/lessons/tokens.js"></script>
 </body>
 </html>

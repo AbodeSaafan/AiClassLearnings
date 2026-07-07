@@ -1,4 +1,9 @@
-App.scenes = [
+App.registerLesson({
+  id: "workflows-vs-agents",
+  emoji: "\ud83c\udfed",
+  title: "AI Workflows vs. Agents",
+  description: "A factory tour: fixed assembly lines versus a robot that decides for itself.",
+  scenes: [
 
   // 1. HOOK / TITLE
   {
@@ -207,4 +212,5 @@ App.scenes = [
     }
   }
 
-];
+  ]
+});
