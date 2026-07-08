@@ -138,6 +138,42 @@ App.registerLesson({
           button.disabled = true;
         });
       }
+    },
+    {
+      id: "run",
+      title: "It Runs the Code",
+      render: function (stage) {
+        stage.innerHTML =
+          '<div class="scene">' +
+            '<p class="label">Superpower 3 — ▶️ Run</p>' +
+            '<h2>Now it checks its own work.</h2>' +
+            '<p class="subtitle">It runs a quick test and watches the result — so it knows whether the fix actually worked.</p>' +
+            '<div class="ca-run-box">' +
+              '<div class="ca-run-line">▶️ Running test: <strong>can a user log in?</strong></div>' +
+              '<div class="ca-run-line" id="ca-run-status"><span class="ca-run-spinner">⏳</span> starting…</div>' +
+            '</div>' +
+            '<div style="margin-top:22px"><button class="btn" id="ca-run-btn">Run the test ▶️</button></div>' +
+            '<p class="takeaway" id="ca-run-take" style="visibility:hidden;margin-top:18px">The test passed — the fix works.</p>' +
+          '</div>';
+
+        var status = stage.querySelector("#ca-run-status");
+        var button = stage.querySelector("#ca-run-btn");
+        var take = stage.querySelector("#ca-run-take");
+
+        button.addEventListener("click", function () {
+          button.disabled = true;
+          button.textContent = "Running…";
+          status.innerHTML = '<span class="ca-run-spinner">⏳</span> checking the login…';
+          setTimeout(function () {
+            status.innerHTML = '<span class="ca-run-result ca-fail">🔴 before the fix: FAILED</span>';
+          }, 700);
+          setTimeout(function () {
+            status.innerHTML = '<span class="ca-run-result ca-pass">🟢 after the fix: PASSED</span>';
+            take.style.visibility = "visible";
+            button.textContent = "Test passed ✓";
+          }, 1600);
+        });
+      }
     }
   ]
 });
