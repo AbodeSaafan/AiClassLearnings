@@ -42,3 +42,13 @@
 .ca-caret { border-right: 3px solid var(--ink); animation: ca-blink 1s step-end infinite; }
 @keyframes ca-blink { 50% { border-color: transparent; } }
 @media (prefers-reduced-motion: reduce) { .ca-caret { animation: none; } }
+
+.ca-file-list { max-width: 460px; margin: 24px auto 0; padding: 12px; text-align: left; }
+.ca-file {
+  display: flex; align-items: center; gap: 10px; padding: 12px 14px;
+  border-radius: 12px; font-weight: 700; box-shadow: none; margin: 6px 0;
+  border: 2px solid transparent; transition: background .2s ease, border-color .2s ease;
+}
+.ca-file.ca-scanning { background: var(--bg-2); }
+.ca-file.ca-found { border-color: var(--accent); background: #fff7e6; }
+.ca-file .ca-file-note { margin-left: auto; font-size: 13px; color: var(--muted); font-weight: 800; }

@@ -62,6 +62,50 @@ App.registerLesson({
           type();
         });
       }
+    },
+    {
+      id: "read",
+      title: "It Reads Your Project",
+      render: function (stage) {
+        stage.innerHTML =
+          '<div class="scene">' +
+            '<p class="label">Superpower 1 — 👀 Read</p>' +
+            '<h2>First, it looks inside your project.</h2>' +
+            '<p class="subtitle">It can open your files and understand them — something a plain chatbot cannot do.</p>' +
+            '<div class="ca-file-list" id="ca-file-list">' +
+              '<div class="ca-file" data-name="index.html">📄 index.html</div>' +
+              '<div class="ca-file" data-name="styles.css">🎨 styles.css</div>' +
+              '<div class="ca-file" data-name="login.js">📜 login.js</div>' +
+              '<div class="ca-file" data-name="about.js">📜 about.js</div>' +
+            '</div>' +
+            '<div style="margin-top:22px"><button class="btn" id="ca-read-btn">Look through the project 🔍</button></div>' +
+            '<p class="takeaway" id="ca-read-take" style="visibility:hidden;margin-top:18px">Found it: the problem lives in <strong>login.js</strong>.</p>' +
+          '</div>';
+
+        var files = Array.prototype.slice.call(stage.querySelectorAll(".ca-file"));
+        var button = stage.querySelector("#ca-read-btn");
+        var take = stage.querySelector("#ca-read-take");
+
+        button.addEventListener("click", function () {
+          button.disabled = true;
+          files.forEach(function (f) { f.classList.remove("ca-scanning", "ca-found"); });
+          var i = 0;
+          var timer = setInterval(function () {
+            if (i > 0) files[i - 1].classList.remove("ca-scanning");
+            if (i >= files.length) {
+              clearInterval(timer);
+              var found = files.filter(function (f) { return f.getAttribute("data-name") === "login.js"; })[0];
+              found.classList.add("ca-found");
+              found.innerHTML += '<span class="ca-file-note">🔍 problem here</span>';
+              take.style.visibility = "visible";
+              button.textContent = "Found the problem file";
+              return;
+            }
+            files[i].classList.add("ca-scanning");
+            i += 1;
+          }, 450);
+        });
+      }
     }
   ]
 });
