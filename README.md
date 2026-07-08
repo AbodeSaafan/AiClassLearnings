@@ -12,6 +12,7 @@ Built as a zero-build static site: plain HTML, CSS, and JavaScript with inline S
 | 📚 **RAG: Giving AI a Library** | How AI looks things up before answering, so it stays accurate and current. |
 | 💬 **From Message to Answer** | What happens between hitting send and getting a reply: tokens, numbers, and predicting one word at a time. |
 | 🪟 **The Context Window** | The AI's short-term memory: what it can "see" at once, and why long chats forget. |
+| 🤖 **Meet Your Coding Assistant** | What a coding agent actually is: an AI that reads, writes, and runs your code on its own to fix a broken login button. |
 
 ## Run it
 
@@ -92,6 +93,7 @@ css/
     rag.css                RAG lesson styles
     pipeline.css           Message-to-answer lesson styles
     context.css            Context-window lesson styles
+    coding-agent.css       Coding-agent lesson styles
 js/
   app.js                   Lesson registry, home hub, navigation, keyboard shortcuts
   data.js                  Copy + task data for the workflows lesson
@@ -103,4 +105,5 @@ js/
     rag.js                 RAG: giving AI a library
     pipeline.js            From message to answer
     context.js             The context window
+    coding-agent.js        Meet Your Coding Assistant (7 scenes)
 ```
