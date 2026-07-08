@@ -1,0 +1,34 @@
+/* Lesson-specific styles for the coding-agent lesson. Prefix: ca-. */
+.ca-hero-emoji {
+  font-size: clamp(56px, 8vw, 104px);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.ca-panel,
+.ca-chat-bubble,
+.ca-file-list,
+.ca-file,
+.ca-diff,
+.ca-run-box,
+.ca-report,
+.ca-recap-board {
+  background: var(--panel);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* Broken/working login button used across scenes */
+.ca-login-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-weight: 800; font-size: 18px; color: #fff;
+  border: none; border-radius: 12px; padding: 12px 22px;
+  background: #c94f4f; box-shadow: 0 5px 0 #9c3a3a;
+}
+.ca-login-btn.ca-working { background: var(--hands); box-shadow: 0 5px 0 #3fae7a; color: #123; }
+
+.ca-corner-status {
+  position: absolute; top: 14px; right: 18px;
+  display: flex; align-items: center; gap: 8px;
+  font-weight: 800; color: var(--muted);
+}
