@@ -215,6 +215,23 @@ App.registerLesson({
           }, 500);
         });
       }
+    },
+    {
+      id: "takeaway",
+      title: "What a Coding Agent Is",
+      render: function (stage) {
+        stage.innerHTML =
+          '<div class="scene">' +
+            '<p class="label">The big idea</p>' +
+            '<h2>A coding agent can act on code — not just talk about it.</h2>' +
+            '<div class="ca-recap-board">' +
+              '<div class="ca-recap-cell"><div class="ca-recap-emoji">👀</div><h3>Read</h3><p>Opens and understands your files.</p></div>' +
+              '<div class="ca-recap-cell"><div class="ca-recap-emoji">✍️</div><h3>Write</h3><p>Changes the code itself.</p></div>' +
+              '<div class="ca-recap-cell"><div class="ca-recap-emoji">▶️</div><h3>Run</h3><p>Runs it and checks the result.</p></div>' +
+            '</div>' +
+            '<p class="takeaway ca-contrast">A plain chatbot can only <em>describe</em> a fix. A coding agent can <strong>read, write, and run</strong> the code to actually make it.</p>' +
+          '</div>';
+      }
     }
   ]
 });

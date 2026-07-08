@@ -87,3 +87,14 @@
 .ca-report-item.ca-show { opacity: 1; transform: none; }
 .ca-report-item:first-of-type { border-top: none; }
 @media (prefers-reduced-motion: reduce) { .ca-report-item { transition: none; } }
+
+.ca-recap-board {
+  max-width: 720px; margin: 22px auto 0; padding: 22px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.ca-recap-cell { padding: 14px; }
+.ca-recap-cell .ca-recap-emoji { font-size: 40px; }
+.ca-recap-cell h3 { margin: 8px 0 4px; }
+.ca-recap-cell p { font-size: 15px; color: var(--muted); }
+.ca-contrast { margin-top: 18px; }
+@media (max-width: 720px) { .ca-recap-board { grid-template-columns: 1fr; } }
