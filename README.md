@@ -49,7 +49,7 @@ The site is instrumented for [Vercel Web Analytics](https://vercel.com/docs/anal
 <script defer src="/_vercel/insights/script.js"></script>
 ```
 
-To start collecting visitor and page-view data, turn on **Web Analytics** for the project in the Vercel dashboard (Project → Analytics → enable). Vercel serves the `/_vercel/insights/script.js` endpoint once it is enabled, so the script returns a 404 during local development, which is expected. No API keys or account IDs are needed.
+To start collecting visitor and page-view data, turn on **Web Analytics** for the project in the Vercel dashboard (open the project, then enable Web Analytics from its Analytics settings). Vercel serves the `/_vercel/insights/script.js` endpoint once it is enabled, so the script returns a 404 during local development, which is expected. No API keys or account IDs are needed.
 
 ## Architecture
 
