@@ -39,6 +39,18 @@ Either:
 
 Push to GitHub and enable **GitHub Pages** (Settings → Pages → deploy from the repository root). No build step is required.
 
+The site also deploys to **Vercel** as-is (see `vercel.json`).
+
+## Analytics
+
+The site is instrumented for [Vercel Web Analytics](https://vercel.com/docs/analytics) (available on the Hobby plan). `index.html` loads the static-site tracking script:
+
+```html
+<script defer src="/_vercel/insights/script.js"></script>
+```
+
+To start collecting visitor and page-view data, turn on **Web Analytics** for the project in the Vercel dashboard (Project → Analytics → enable). Vercel serves the `/_vercel/insights/script.js` endpoint once it is enabled, so the script returns a 404 during local development, which is expected. No API keys or account IDs are needed.
+
 ## Architecture
 
 Lessons are decoupled from the shell. `js/app.js` owns the home hub, scene navigation, progress dots, and keyboard shortcuts. Each lesson is a single self-registering file under `js/lessons/`, with its own optional stylesheet under `css/lessons/`.
