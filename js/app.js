@@ -30,6 +30,7 @@ App.registerLesson = function (lesson) {
         '<h1>The AI Concepts Lab</h1>' +
         '<p class="subtitle">Pick a lesson to explore.</p>' +
         '<div class="lesson-grid">' + cards + '</div>' +
+        '<p class="home-credit">Made by <a href="https://abodesaafan.com" target="_blank" rel="noopener">Abode Saafan</a></p>' +
       '</div>';
     Array.prototype.forEach.call(stage.querySelectorAll(".lesson-card"), function (card) {
       card.addEventListener("click", function () { App.openLesson(card.getAttribute("data-id")); });
