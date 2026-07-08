@@ -77,3 +77,13 @@
 .ca-run-result { font-weight: 800; font-family: var(--font); }
 .ca-run-result.ca-pass { color: #1a7a52; }
 .ca-run-result.ca-fail { color: #a33; }
+
+.ca-report { max-width: 620px; margin: 24px auto 0; padding: 20px 24px; text-align: left; }
+.ca-report-who { font-weight: 800; color: var(--muted); margin-bottom: 10px; }
+.ca-report-item {
+  padding: 10px 0; border-top: 1px solid #efe7db; font-weight: 700;
+  opacity: 0; transform: translateY(6px); transition: opacity .3s ease, transform .3s ease;
+}
+.ca-report-item.ca-show { opacity: 1; transform: none; }
+.ca-report-item:first-of-type { border-top: none; }
+@media (prefers-reduced-motion: reduce) { .ca-report-item { transition: none; } }

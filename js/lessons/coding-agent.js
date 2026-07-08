@@ -174,6 +174,47 @@ App.registerLesson({
           }, 1600);
         });
       }
+    },
+    {
+      id: "report",
+      title: "It Reports Back",
+      render: function (stage) {
+        stage.innerHTML =
+          '<div class="scene" style="position:relative">' +
+            '<div class="ca-corner-status"><button class="ca-login-btn" id="ca-corner-btn" disabled>🔴 Log in</button></div>' +
+            '<p class="label">Step 6 — the hand-off</p>' +
+            '<h2>Finally, it tells you what it did.</h2>' +
+            '<p class="subtitle">In plain English, like a coworker — so you stay in control.</p>' +
+            '<div class="ca-report">' +
+              '<div class="ca-report-who">🤖 Assistant</div>' +
+              '<div class="ca-report-item">👀 Read your project and found the bug in <strong>login.js</strong>.</div>' +
+              '<div class="ca-report-item">✍️ Fixed the line that ignored the typed password.</div>' +
+              '<div class="ca-report-item">▶️ Ran the login test — it passes now.</div>' +
+              '<div class="ca-report-item">✅ The login button works again.</div>' +
+            '</div>' +
+            '<div style="margin-top:22px"><button class="btn" id="ca-report-btn">Show me the summary</button></div>' +
+          '</div>';
+
+        var items = Array.prototype.slice.call(stage.querySelectorAll(".ca-report-item"));
+        var button = stage.querySelector("#ca-report-btn");
+        var cornerBtn = stage.querySelector("#ca-corner-btn");
+
+        button.addEventListener("click", function () {
+          button.disabled = true;
+          button.textContent = "Done ✓";
+          var i = 0;
+          var timer = setInterval(function () {
+            if (i >= items.length) {
+              clearInterval(timer);
+              cornerBtn.classList.add("ca-working");
+              cornerBtn.innerHTML = "🟢 Log in";
+              return;
+            }
+            items[i].classList.add("ca-show");
+            i += 1;
+          }, 500);
+        });
+      }
     }
   ]
 });
