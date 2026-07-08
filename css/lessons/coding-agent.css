@@ -32,3 +32,13 @@
   display: flex; align-items: center; gap: 8px;
   font-weight: 800; color: var(--muted);
 }
+
+.ca-chat-bubble {
+  max-width: 640px; margin: 24px auto 0; padding: 18px 22px;
+  border: 3px solid var(--accent); text-align: left;
+  font-size: clamp(18px, 2vw, 24px); font-weight: 700; min-height: 32px;
+}
+.ca-chat-who { display: block; font-size: 13px; color: var(--muted); font-weight: 800; margin-bottom: 6px; text-transform: uppercase; letter-spacing: .06em; }
+.ca-caret { border-right: 3px solid var(--ink); animation: ca-blink 1s step-end infinite; }
+@keyframes ca-blink { 50% { border-color: transparent; } }
+@media (prefers-reduced-motion: reduce) { .ca-caret { animation: none; } }
