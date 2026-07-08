@@ -106,6 +106,38 @@ App.registerLesson({
           }, 450);
         });
       }
+    },
+    {
+      id: "write",
+      title: "It Changes the Code",
+      render: function (stage) {
+        stage.innerHTML =
+          '<div class="scene">' +
+            '<p class="label">Superpower 2 — ✍️ Write</p>' +
+            '<h2>Then it fixes the file itself.</h2>' +
+            '<p class="subtitle">You do not have to understand the code. Notice one line was wrong — it swaps in the right one.</p>' +
+            '<div class="ca-diff">' +
+              '<div class="ca-diff-file">📜 login.js</div>' +
+              '<span class="ca-line">function logIn() {</span>' +
+              '<span class="ca-line ca-line-bad" id="ca-bad-line">&nbsp;&nbsp;check_password("");  // always empty!</span>' +
+              '<span class="ca-line ca-line-good" id="ca-good-line">&nbsp;&nbsp;check_password(typedPassword);  // use what they typed</span>' +
+              '<span class="ca-line">}</span>' +
+            '</div>' +
+            '<div style="margin-top:22px"><button class="btn" id="ca-write-btn">Make the fix ✍️</button></div>' +
+            '<p class="takeaway" id="ca-write-take" style="visibility:hidden;margin-top:18px">One wrong line replaced with the correct one.</p>' +
+          '</div>';
+
+        var goodLine = stage.querySelector("#ca-good-line");
+        var button = stage.querySelector("#ca-write-btn");
+        var take = stage.querySelector("#ca-write-take");
+
+        button.addEventListener("click", function () {
+          goodLine.classList.add("ca-show");
+          take.style.visibility = "visible";
+          button.textContent = "Fix applied ✓";
+          button.disabled = true;
+        });
+      }
     }
   ]
 });

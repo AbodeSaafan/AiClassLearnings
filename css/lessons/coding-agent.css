@@ -52,3 +52,15 @@
 .ca-file.ca-scanning { background: var(--bg-2); }
 .ca-file.ca-found { border-color: var(--accent); background: #fff7e6; }
 .ca-file .ca-file-note { margin-left: auto; font-size: 13px; color: var(--muted); font-weight: 800; }
+
+.ca-diff {
+  max-width: 640px; margin: 24px auto 0; padding: 18px; text-align: left;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: clamp(14px, 1.6vw, 18px);
+}
+.ca-diff-file { font-family: var(--font); font-weight: 800; color: var(--muted); margin-bottom: 10px; }
+.ca-line { padding: 8px 12px; border-radius: 8px; margin: 6px 0; display: block; }
+.ca-line-bad { background: #fdecec; color: #a33; text-decoration: line-through; }
+.ca-line-good { background: #e9f9f1; color: #1a7a52; opacity: 0; transition: opacity .4s ease; }
+.ca-line-good.ca-show { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .ca-line-good { transition: none; } }
