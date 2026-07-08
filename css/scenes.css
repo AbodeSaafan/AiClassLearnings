@@ -26,6 +26,21 @@
 .nav-btn.primary { background: var(--brand); color: #fff; box-shadow: 0 4px 0 var(--brand-shadow); }
 .nav-btn:disabled { opacity: .4; cursor: not-allowed; box-shadow: none; }
 
-.progress { display: flex; gap: 10px; }
+.progress { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
 .dot { width: 12px; height: 12px; border-radius: 50%; background: #e7ddcd; transition: .2s; }
 .dot.active { background: var(--brand); transform: scale(1.25); }
+
+/* Phones: keep every nav control on-screen and tappable */
+@media (max-width: 640px) {
+  #stage { inset: 0 0 68px 0; padding: 22px 16px; }
+  #navbar { height: 68px; padding: 0 12px; gap: 8px; }
+  .nav-btn, #btn-home { font-size: 15px; padding: 11px 14px; }
+  #btn-home { margin-right: 8px; }
+  .progress { gap: 7px; }
+  .dot { width: 9px; height: 9px; }
+}
+
+/* Very small phones: drop the decorative progress dots so buttons stay usable */
+@media (max-width: 460px) {
+  .progress { display: none; }
+}
