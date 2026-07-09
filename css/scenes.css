@@ -1,11 +1,14 @@
 #stage {
   position: absolute; inset: 0 0 88px 0; /* leave room for navbar */
-  display: flex; align-items: center; justify-content: center;
+  display: flex; flex-direction: column; align-items: center;
   padding: 32px; text-align: center;
   overflow-y: auto;
 }
 .scene {
   width: 100%; max-width: 1100px;
+  /* margin: auto centres short content; collapses to 0 when content overflows so
+     iOS Safari can always scroll from the very top of tall scenes. */
+  margin-top: auto; margin-bottom: auto;
   animation: sceneIn .45s ease both;
 }
 @keyframes sceneIn {

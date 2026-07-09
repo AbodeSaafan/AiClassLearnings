@@ -331,12 +331,30 @@
 @media (max-width: 900px) {
   .pipe-message-flow,
   .pipe-predict-grid,
-  .pipe-number-grid,
-  .pipe-recap-grid {
+  .pipe-number-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Show recap as a 3-col grid on tablets; phones get 2-col below */
+  .pipe-recap-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .pipe-flow-arrow {
     transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 640px) {
+  /* 2-col recap on phones */
+  .pipe-recap-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  /* Single column on very small phones */
+  .pipe-recap-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -436,12 +436,25 @@
 @media (max-width: 900px) {
   .rag-closed-grid,
   .rag-pipeline-grid,
-  .rag-compare-grid,
-  .rag-use-grid {
+  .rag-compare-grid {
     grid-template-columns: 1fr;
   }
 
+  /* 2 × 2 on tablets; phone gets single column below */
+  .rag-use-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .rag-panel {
+    min-height: auto;
+  }
+
   .rag-use-card {
+    min-height: auto;
+  }
+
+  .rag-closed-book,
+  .rag-ai-card {
     min-height: auto;
   }
 }
@@ -463,5 +476,15 @@
 
   .rag-arrow {
     display: none;
+  }
+
+  /* Single column on phones */
+  .rag-use-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reduce the translateX so selected docs don't overflow the library box */
+  .rag-selected {
+    transform: translateX(6px) rotate(-1deg);
   }
 }
