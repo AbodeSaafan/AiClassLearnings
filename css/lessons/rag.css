@@ -487,4 +487,10 @@
   .rag-selected {
     transform: translateX(6px) rotate(-1deg);
   }
+
+  /* Re-define the pop animation to match the reduced translateX above */
+  @keyframes rag-pop {
+    from { transform: translateX(6px) scale(.96); }
+    to   { transform: translateX(6px) scale(1); }
+  }
 }
