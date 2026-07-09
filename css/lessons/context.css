@@ -382,13 +382,22 @@
 @media (max-width: 900px) {
   .ctx-board-wrap,
   .ctx-demo-grid,
-  .ctx-before-after,
-  .ctx-recap-board {
+  .ctx-before-after {
     grid-template-columns: 1fr;
   }
 
+  /* Keep recap board 3-col down to ~600 px; it only has 3 short items */
   .ctx-strategy-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Remove forced heights that make scenes unnecessarily tall on mobile */
+  .ctx-consequence-card {
+    min-height: auto;
+  }
+
+  .ctx-strategy-card {
+    min-height: auto;
   }
 }
 
@@ -397,11 +406,28 @@
     grid-template-columns: 1fr;
   }
 
+  /* Stack the flex-row containers into a column on narrow phones */
   .ctx-board-row,
-  .ctx-system-sticky,
-  .ctx-message-card,
   .ctx-window-head {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* white-space: nowrap on strong tags would prevent wrapping — relax it here */
+  .ctx-board-row strong,
+  .ctx-window-head strong {
+    white-space: normal;
+  }
+
+  /* These are actual grid containers, so grid-template-columns: 1fr works */
+  .ctx-system-sticky,
+  .ctx-message-card {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+
+  .ctx-recap-board {
+    grid-template-columns: 1fr;
   }
 }
